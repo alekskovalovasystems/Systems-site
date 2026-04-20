@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SYSTEMS — Independent Strategic Advisory</title>
+<meta name="description" content="Independent strategic advisory at the intersection of institutional systems, capital flow and human decision-making.">
+<meta property="og:title" content="SYSTEMS — Independent Strategic Advisory">
+<meta property="og:description" content="Independent strategic advisory at the intersection of institutional systems, capital flow and human decision-making.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://systems-advisory.com">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="SYSTEMS — Independent Strategic Advisory">
+<meta name="twitter:description" content="Independent strategic advisory at the intersection of institutional systems, capital flow and human decision-making.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%230a0a0a'/><text y='.9em' font-size='60' x='50' text-anchor='middle' dominant-baseline='middle' fill='white' font-family='serif'>S</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0a0a0a; --mid: #6e6e73; --light: #f2ede8;
+    --white: #faf8f5; --accent: #c9b99a; --rule: #e0d9d0; --dark: #1d1d1f;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--white); color: var(--ink); font-family: 'DM Sans', -apple-system, sans-serif; font-weight: 300; -webkit-font-smoothing: antialiased; }
+
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; height: 52px; display: flex; align-items: center; justify-content: space-between; padding: 0 48px; background: rgba(255,255,255,0.88); backdrop-filter: saturate(180%) blur(20px); border-bottom: 1px solid rgba(0,0,0,0.07); }
+  .nav-logo { font-size: 11px; letter-spacing: 0.26em; text-transform: uppercase; color: var(--ink); text-decoration: none; font-weight: 400; }
+  .nav-links { display: flex; gap: 36px; list-style: none; }
+  .nav-links a { font-size: 12px; color: var(--mid); text-decoration: none; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--ink); }
+
+  .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 120px 48px 80px; background: var(--white); position: relative; }
+  .hero-eyebrow { font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--mid); margin-bottom: 28px; opacity: 0; animation: fadeUp 0.9s ease 0.1s forwards; }
+  .hero-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(58px, 9vw, 118px); font-weight: 300; line-height: 0.92; letter-spacing: -0.02em; margin-bottom: 40px; opacity: 0; animation: fadeUp 0.9s ease 0.25s forwards; }
+  .hero-title em { font-style: italic; color: var(--mid); }
+  .hero-sub { font-size: 17px; line-height: 1.7; color: var(--mid); max-width: 580px; margin: 0 auto 56px; opacity: 0; animation: fadeUp 0.9s ease 0.4s forwards; }
+  .hero-cta { display: inline-block; font-size: 13px; letter-spacing: 0.05em; color: var(--white); background: var(--ink); padding: 14px 36px; border-radius: 980px; text-decoration: none; transition: opacity 0.2s; opacity: 0; animation: fadeUp 0.9s ease 0.55s forwards; }
+  .hero-cta:hover { opacity: 0.8; }
+  .hero-rule { position: absolute; bottom: 0; left: 0; right: 0; height: 1px; background: var(--rule); }
+
+  .eyebrow { font-size: 11px; letter-spacing: 0.26em; text-transform: uppercase; color: var(--mid); display: block; margin-bottom: 24px; }
+  .section-inner { max-width: 1080px; margin: 0 auto; }
+
+
+  .scale { padding: 120px 48px; background: var(--light); }
+  .scale-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(38px, 5vw, 62px); font-weight: 300; line-height: 1.08; margin-bottom: 72px; max-width: 780px; }
+  .scale-title em { font-style: italic; color: var(--mid); }
+  .scale-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1px; background: var(--rule); }
+  .scale-item { background: var(--light); padding: 44px 32px; }
+  .scale-num { font-family: 'Cormorant Garamond', serif; font-size: 40px; font-weight: 300; color: var(--accent); line-height: 1; margin-bottom: 16px; }
+  .scale-label { font-size: 15px; font-weight: 400; color: var(--ink); margin-bottom: 10px; }
+  .scale-desc { font-size: 13px; line-height: 1.75; color: var(--mid); }
+
+  .statement { padding: 160px 48px; background: var(--white); text-align: center; }
+  .statement-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(32px, 4.5vw, 58px); font-weight: 300; line-height: 1.18; max-width: 860px; margin: 0 auto 48px; }
+  .statement-title em { font-style: italic; color: var(--mid); }
+  .statement-body { font-size: 17px; line-height: 1.75; color: var(--mid); max-width: 580px; margin: 0 auto; }
+
+  .founder { padding: 120px 48px; background: var(--dark); color: var(--white); }
+  .founder .eyebrow { color: #6e6e73; }
+  .founder-grid { display: grid; grid-template-columns: 320px 1fr; gap: 72px; align-items: start; }
+  .founder-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(34px, 3.8vw, 52px); font-weight: 300; line-height: 1.08; margin-bottom: 32px; }
+  .founder-title em { font-style: italic; color: var(--accent); }
+  .founder-lead { font-size: 15px; line-height: 1.85; color: #a1a1a6; margin-bottom: 18px; }
+  .founder-name { font-size: 12px; letter-spacing: 0.1em; color: #6e6e73; margin-top: 36px; }
+  .founder-photo-placeholder { width: 100%; aspect-ratio: 3/4; background: #252420; display: flex; align-items: flex-end; padding: 20px; border: 1px solid #2a2826; }
+  .founder-photo-placeholder span { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: #3a3835; }
+  .founder-photo { width: 100%; aspect-ratio: 3/4; object-fit: cover; object-position: top; display: block; }
+  .founder-right { padding-top: 0; }
+  .expertise-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: #2a2826; margin-top: 48px; }
+  .expertise-item { background: #1d1d1b; padding: 24px 22px; }
+  .expertise-num { font-family: 'Cormorant Garamond', serif; font-size: 11px; letter-spacing: 0.15em; color: var(--accent); margin-bottom: 10px; display: block; }
+  .expertise-title { font-size: 13px; font-weight: 400; color: var(--white); margin-bottom: 8px; line-height: 1.3; }
+  .expertise-desc { font-size: 12px; line-height: 1.7; color: #5a5855; }
+
+  .howwework { padding: 120px 48px; background: var(--light); }
+  .hww-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 96px; align-items: start; }
+  .hww-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(34px, 4vw, 52px); font-weight: 300; line-height: 1.08; position: sticky; top: 80px; }
+  .hww-title em { font-style: italic; color: var(--mid); }
+  .hww-lead { font-size: 15px; line-height: 1.85; color: #4a4845; margin-bottom: 24px; }
+  .hww-tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 36px 0; }
+  .hww-tag { font-size: 11px; letter-spacing: 0.08em; border: 1px solid var(--rule); color: var(--mid); padding: 6px 16px; border-radius: 980px; }
+  .hww-closing { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 300; line-height: 1.5; color: var(--ink); font-style: italic; border-top: 1px solid var(--rule); padding-top: 32px; margin-top: 8px; }
+
+  .forwhom { padding: 120px 48px; background: var(--white); }
+  .forwhom-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(36px, 4vw, 54px); font-weight: 300; line-height: 1.08; margin-bottom: 72px; max-width: 640px; }
+  .forwhom-title em { font-style: italic; color: var(--mid); }
+  .forwhom-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; background: var(--rule); }
+  .forwhom-item { background: var(--white); padding: 48px 36px; }
+  .forwhom-tag { font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); margin-bottom: 20px; display: block; }
+  .forwhom-name { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 300; margin-bottom: 16px; }
+  .forwhom-desc { font-size: 13px; line-height: 1.8; color: var(--mid); }
+
+  .services { padding: 120px 48px; background: var(--light); }
+  .services-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(36px, 4vw, 54px); font-weight: 300; line-height: 1.08; margin-bottom: 72px; max-width: 600px; }
+  .services-title em { font-style: italic; color: var(--mid); }
+  .service-row { display: grid; grid-template-columns: 56px 1fr 1.2fr; gap: 48px; padding: 44px 0; border-bottom: 1px solid var(--rule); align-items: start; }
+  .service-row:first-child { border-top: 1px solid var(--rule); }
+  .service-n { font-family: 'Cormorant Garamond', serif; font-size: 13px; color: var(--accent); padding-top: 4px; letter-spacing: 0.1em; }
+  .service-name { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 300; line-height: 1.2; }
+  .service-desc { font-size: 13px; line-height: 1.85; color: var(--mid); }
+
+  .network { padding: 120px 48px; background: var(--ink); color: var(--white); }
+  .network .eyebrow { color: #6e6e73; }
+  .network-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 96px; align-items: center; }
+  .network-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(36px, 4vw, 54px); font-weight: 300; line-height: 1.08; }
+  .network-title em { font-style: italic; color: var(--accent); }
+  .network-body { font-size: 15px; line-height: 1.85; color: #a1a1a6; margin-bottom: 20px; }
+  .network-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 36px; }
+  .network-tag { font-size: 11px; letter-spacing: 0.1em; border: 1px solid #3a3a3c; color: #a1a1a6; padding: 6px 16px; border-radius: 980px; }
+
+  .contact { padding: 180px 48px; background: var(--white); text-align: center; }
+  .contact-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(46px, 7vw, 86px); font-weight: 300; line-height: 0.96; margin-bottom: 64px; }
+  .contact-title em { font-style: italic; color: var(--mid); }
+  .contact-note { font-size: 11px; letter-spacing: 0.1em; color: #c7c7cc; text-transform: uppercase; margin-top: 40px; display: block; }
+
+  /* Contact info strip */
+  .contact-info { display: flex; justify-content: center; gap: 48px; margin: 0 auto 64px; flex-wrap: wrap; }
+  .contact-info-item { text-align: left; }
+  .contact-info-label { font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); margin-bottom: 6px; display: block; }
+  .contact-info-value { font-size: 13px; color: var(--mid); text-decoration: none; transition: color 0.2s; }
+  .contact-info-value:hover { color: var(--ink); }
+
+  /* Contact form */
+  .contact-form { max-width: 640px; margin: 0 auto; text-align: left; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+  .form-group { display: flex; flex-direction: column; gap: 8px; margin-bottom: 16px; }
+  .form-group label { font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--mid); }
+  .form-group input, .form-group textarea, .form-group select {
+    background: transparent; border: none; border-bottom: 1px solid var(--rule);
+    padding: 12px 0; font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 300;
+    color: var(--ink); outline: none; width: 100%; transition: border-color 0.2s;
+    -webkit-appearance: none; border-radius: 0;
+  }
+  .form-group input:focus, .form-group textarea:focus, .form-group select:focus { border-bottom-color: var(--ink); }
+  .form-group input::placeholder, .form-group textarea::placeholder { color: #c7c7cc; }
+  .form-group textarea { resize: none; min-height: 100px; }
+  .form-group select { cursor: pointer; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%236e6e73'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 4px center; padding-right: 20px; }
+  .form-group select option { color: var(--ink); }
+  .form-submit { display: inline-block; font-size: 13px; letter-spacing: 0.05em; color: var(--white); background: var(--ink); padding: 14px 40px; border-radius: 980px; border: none; cursor: pointer; transition: opacity 0.2s; font-family: 'DM Sans', sans-serif; font-weight: 300; margin-top: 8px; }
+  .form-submit:hover { opacity: 0.75; }
+  .form-submit:disabled { opacity: 0.4; cursor: not-allowed; }
+  .form-success { max-width: 640px; margin: 0 auto 32px; padding: 20px 0; border-top: 1px solid var(--accent); border-bottom: 1px solid var(--accent); text-align: center; }
+  .form-success p { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 300; color: var(--ink); font-style: italic; }
+  .form-error { max-width: 640px; margin: 0 auto 32px; text-align: center; }
+  .form-error p { font-size: 13px; color: #c0392b; }
+  .field-error { font-size: 11px; color: #c0392b; display: block; margin-top: 4px; }
+  .form-divider { width: 1px; background: var(--rule); margin: 0 auto 48px; height: 1px; max-width: 640px; }
+
+  @media (max-width: 768px) {
+    .form-row { grid-template-columns: 1fr; }
+    .contact-info { gap: 24px; flex-direction: column; align-items: center; }
+    .contact { padding: 80px 24px; }
+  }
+
+  footer { padding: 20px 48px; background: var(--light); border-top: 1px solid var(--rule); display: flex; justify-content: space-between; align-items: center; }
+  .footer-l { font-size: 11px; color: var(--mid); }
+  .footer-c { font-size: 11px; color: var(--mid); letter-spacing: 0.1em; }
+  .footer-r { font-size: 11px; color: #c7c7cc; }
+
+  .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.75s ease, transform 0.75s ease; }
+  .reveal.visible { opacity: 1; transform: none; }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: none; } }
+
+  /* Hamburger */
+  .nav-burger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
+  .nav-burger span { display: block; width: 22px; height: 1.5px; background: var(--ink); transition: all 0.3s ease; }
+  .nav-burger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+  .nav-burger.open span:nth-child(2) { opacity: 0; }
+  .nav-burger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+  .mobile-menu { display: none; position: fixed; top: 52px; left: 0; right: 0; background: rgba(255,255,255,0.97); backdrop-filter: blur(20px); border-bottom: 1px solid var(--rule); z-index: 199; padding: 24px 24px 32px; flex-direction: column; gap: 0; }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a { font-size: 15px; color: var(--ink); text-decoration: none; padding: 16px 0; border-bottom: 1px solid var(--rule); letter-spacing: 0.02em; }
+  .mobile-menu a:last-child { border-bottom: none; }
+
+  @media (max-width: 768px) {
+    nav { padding: 0 20px; }
+    .nav-links { display: none; }
+    .nav-burger { display: flex; }
+    .hero, .scale, .statement, .founder, .forwhom, .services, .network, .contact { padding: 80px 24px; }
+    .scale-grid, .forwhom-grid { grid-template-columns: 1fr 1fr; }
+    .founder-grid, .network-inner { grid-template-columns: 1fr; gap: 40px; }
+    .expertise-grid { grid-template-columns: 1fr; }
+    .service-row { grid-template-columns: 40px 1fr; gap: 20px; } .service-desc { display: none; }
+    .contact-grid { grid-template-columns: 1fr; }
+    footer { flex-direction: column; gap: 8px; text-align: center; }
+    .hww-grid { grid-template-columns: 1fr; gap: 40px; }
+    .hww-title { position: static; }
+    .scale-grid { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-logo">SYSTEMS</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <button class="nav-burger" id="burger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#about" class="mobile-link">About</a>
+  <a href="#services" class="mobile-link">Services</a>
+  <a href="#contact" class="mobile-link">Contact</a>
+</div>
+
+<section class="hero">
+  <p class="hero-eyebrow">Independent Strategic Advisory</p>
+  <h1 class="hero-title">Every decision<br>moves <em>capital.</em></h1>
+  <p class="hero-sub">Independent strategic advisory at the intersection of institutional systems, capital flow and human decision-making.</p>
+  <a href="#contact" class="hero-cta">Get in touch</a>
+  <div class="hero-rule"></div>
+</section>
+
+<section class="scale" id="about">
+  <div class="section-inner">
+    <span class="eyebrow reveal">The Architecture of Influence</span>
+    <h2 class="scale-title reveal">Systems operate at every scale.<br><em>Capital flows through all of them.</em></h2>
+    <div class="scale-grid">
+      <div class="scale-item reveal">
+        <div class="scale-num">I</div>
+        <div class="scale-label">Planetary Systems</div>
+        <div class="scale-desc">Earth as an element of a solar system. Nations as elements of a geopolitical order. When planetary-scale systems shift, capital repositions.</div>
+      </div>
+      <div class="scale-item reveal">
+        <div class="scale-num">II</div>
+        <div class="scale-label">Institutional Systems</div>
+        <div class="scale-desc">Governments, multilateral bodies, donor architectures. A single policy decision at this level changes the direction of billions.</div>
+      </div>
+      <div class="scale-item reveal">
+        <div class="scale-num">III</div>
+        <div class="scale-label">Corporate Systems</div>
+        <div class="scale-desc">A company is an element of a business system. When it operates internationally, its internal logic collides with systems it did not design.</div>
+      </div>
+      <div class="scale-item reveal">
+        <div class="scale-num">IV</div>
+        <div class="scale-label">Human Systems</div>
+        <div class="scale-desc">Every decision at the top reflects patterns operating far beneath the surface — in the people who hold power and the structures they inhabit.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="statement">
+  <h2 class="statement-title reveal">What we see on the surface —<br>performance, growth, results —<br>is only a <em>reflection</em><br>of deeper patterns inside.</h2>
+  <p class="statement-body reveal">The question is not how the business operates. It is how decisions are really made within it — and what those decisions are actually based on.</p>
+</section>
+
+<section class="founder">
+  <div class="section-inner">
+    <span class="eyebrow reveal">Founder</span>
+    <div class="founder-grid">
+      <div>
+        <img class="founder-photo reveal" src="oleksandra-kovalova-photo.jpg" alt="Oleksandra Kovalova — Founder, SYSTEMS">
+      </div>
+      <div class="founder-right">
+        <h2 class="founder-title reveal">Presidents move capital.<br>So do CEOs.<br>So does every person at the top of a system who doesn't yet know <em>what is actually driving it.</em></h2>
+        <p class="founder-lead reveal">For fifteen years, I was not advising these systems. I was inside them — running businesses, shaping policy at the level of governments, writing laws and watching what shifted when they changed.</p>
+        <p class="founder-lead reveal">I navigated geopolitical crises at institutional level, where a single decision restructured financial architectures across entire jurisdictions. I worked at the intersection of international criminal law, state-level reform, and the human dynamics that determine whether systems hold or collapse.</p>
+        <p class="founder-lead reveal">What I kept seeing, from inside, was this: the real decisions were rarely the visible ones. Capital moved in response to forces that had been building long before any announcement. Systems failed not from strategy errors, but from patterns inside the people who held power — patterns no standard engagement ever touched.</p>
+        <p class="founder-lead reveal">At some point I understood: being inside a system is not the same as being able to change it. That requires a different position — outside, where the full structure becomes visible. Every law that reshaped a market was written by someone. Every crisis that moved capital was preceded by a decision. <em>I now work at that layer — from the outside.</em></p>
+        <p class="founder-name reveal">Oleksandra Kovalova · Founder, SYSTEMS</p>
+        <div class="expertise-grid">
+          <div class="expertise-item reveal">
+            <span class="expertise-num">I</span>
+            <div class="expertise-title">International & Criminal Law</div>
+            <div class="expertise-desc">Cross-jurisdictional legal structures — constitutional frameworks, international criminal proceedings, ECHR practice.</div>
+          </div>
+          <div class="expertise-item reveal">
+            <span class="expertise-num">II</span>
+            <div class="expertise-title">State-Level Policy-Making</div>
+            <div class="expertise-desc">Governance reform and policy architecture across multiple jurisdictions — EU, UN, and IMF-backed programmes.</div>
+          </div>
+          <div class="expertise-item reveal">
+            <span class="expertise-num">III</span>
+            <div class="expertise-title">Crisis Navigation</div>
+            <div class="expertise-desc">Geopolitical crises at institutional level — where systems collapse, restructure, and capital moves in response.</div>
+          </div>
+          <div class="expertise-item reveal">
+            <span class="expertise-num">IV</span>
+            <div class="expertise-title">Reading Systems Beyond Visible Logic</div>
+            <div class="expertise-desc">Where decisions are formed before they appear — and what is actually driving outcomes beneath the surface.</div>
+          </div>
+          <div class="expertise-item reveal">
+            <span class="expertise-num">V</span>
+            <div class="expertise-title">Organisational Psychology</div>
+            <div class="expertise-desc">Master's research into unconscious leadership patterns — the layer that top consulting firms do not touch.</div>
+          </div>
+          <div class="expertise-item reveal">
+            <span class="expertise-num">VI</span>
+            <div class="expertise-title">Systemic Constellations</div>
+            <div class="expertise-desc">Practitioner since 2016. Making invisible system dynamics visible — applied in institutional and private contexts.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="howwework">
+  <div class="section-inner">
+    <span class="eyebrow reveal">How We Work</span>
+    <div class="hww-grid">
+      <div class="hww-left">
+        <h2 class="hww-title reveal">Not standard<br>business consulting.<br><em>Something more<br>precise.</em></h2>
+      </div>
+      <div class="hww-right">
+        <p class="hww-lead reveal">Systems do not wait for frameworks. Organisations that operate by established protocols, standard playbooks, and conventional strategy are not losing because their people are wrong — they are losing because the logic they trust was built for a reality that no longer exists.</p>
+        <p class="hww-lead reveal">What determines outcomes now is the capacity to read a system as it actually operates — not as it was designed, not as it appears in any report. Beneath every visible decision is a structure: patterns of power, invisible allocations, forces that were already in motion before anyone named them.</p>
+        <p class="hww-lead reveal">This is what we have always looked for. Not the decision itself — but what precedes it. Not the strategy — but the system that will either hold it or absorb it without changing.</p>
+        <p class="hww-lead reveal">We do not arrive with a framework. We start by mapping how capital actually moves inside your system — how decisions are made, how resources are allocated, how leadership dynamics shape outcomes at every level.</p>
+        <p class="hww-lead reveal">Our assessment covers every layer simultaneously: legal architecture, management structure, capital distribution, crisis patterns, and the human dynamics that no standard consulting engagement touches.</p>
+        <p class="hww-lead reveal">The result is not a report. It is a map — one that shows where the system holds, where it leaks, and where one shift changes everything.</p>
+        <div class="hww-tags reveal">
+          <span class="hww-tag">Capital flow mapping</span>
+          <span class="hww-tag">Decision architecture</span>
+          <span class="hww-tag">Legal structure analysis</span>
+          <span class="hww-tag">Management dynamics</span>
+          <span class="hww-tag">Resource allocation audit</span>
+          <span class="hww-tag">Leadership pattern assessment</span>
+          <span class="hww-tag">Crisis & risk structure</span>
+          <span class="hww-tag">Cross-jurisdictional compliance</span>
+        </div>
+        <p class="hww-closing reveal">Every engagement is built from scratch.<br>For your system. Your context. Your moment.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="forwhom" id="forwhom">
+  <div class="section-inner">
+    <span class="eyebrow reveal">Who We Work With</span>
+    <h2 class="forwhom-title reveal">The right engagement<br>for the <em>right context.</em></h2>
+    <div class="forwhom-grid">
+      <div class="forwhom-item reveal">
+        <span class="forwhom-tag">Governments & Institutions</span>
+        <div class="forwhom-name">Institutional leaders</div>
+        <div class="forwhom-desc">Navigating reform, restructuring, or multi-stakeholder complexity at national or international level. Where one decision reshapes policy — and capital follows.</div>
+      </div>
+      <div class="forwhom-item reveal">
+        <span class="forwhom-tag">Global Enterprises</span>
+        <div class="forwhom-name">International operators</div>
+        <div class="forwhom-desc">Companies operating across jurisdictions where internal logic collides with external systems — regulatory, political, cultural, financial. Expansion that requires more than strategy.</div>
+      </div>
+      <div class="forwhom-item reveal">
+        <span class="forwhom-tag">Leaders in Transition</span>
+        <div class="forwhom-name">Individuals at decision points</div>
+        <div class="forwhom-desc">Around money, structure, and growth — where the real question is not what to do, but how decisions are actually being made and what is driving them beneath the surface.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="section-inner">
+    <span class="eyebrow reveal">What We Do</span>
+    <h2 class="services-title reveal">We enter where others<br>are already too close<br>to <em>see clearly.</em></h2>
+    <div>
+      <div class="service-row reveal">
+        <span class="service-n">01</span>
+        <div class="service-name">Decision-Level Entry</div>
+        <div class="service-desc">We step in where decisions shape systems, capital and direction. Not at the level of strategy — at the level where outcomes are actually determined.</div>
+      </div>
+      <div class="service-row reveal">
+        <span class="service-n">02</span>
+        <div class="service-name">System Reading</div>
+        <div class="service-desc">We identify what is not visible inside the system — power dynamics, hidden drivers, misalignment in decision logic. One decision at this level does not impact a business. It moves capital across systems.</div>
+      </div>
+      <div class="service-row reveal">
+        <span class="service-n">03</span>
+        <div class="service-name">Decision Shift</div>
+        <div class="service-desc">We influence the configuration of the decision so the right outcome becomes inevitable. For organisations at a structural inflection point — scaling, reform, or cross-jurisdictional expansion.</div>
+      </div>
+      <div class="service-row reveal">
+        <span class="service-n">04</span>
+        <div class="service-name">Exit</div>
+        <div class="service-desc">We leave once the decision is made. We do not become part of the system. Independence is not a positioning choice — it is what makes the work possible.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="network">
+  <div class="section-inner">
+    <span class="eyebrow reveal">The Model</span>
+    <div class="network-inner">
+      <div>
+        <h2 class="network-title reveal">A core team.<br>The right experts.<br><em>Built for your context.</em></h2>
+      </div>
+      <div>
+        <p class="network-body reveal">SYSTEMS operates with a small, fully capable core team — people who have worked inside the same kinds of systems we are now brought in to read. Operationally independent. Strategically precise.</p>
+        <p class="network-body reveal">For each engagement, we extend with specialists selected specifically for the client's context, challenge, and jurisdiction. Not a roster — a deliberate configuration. The approach is always built from scratch, because the system we are entering always is.</p>
+        <div class="network-tags reveal">
+          <span class="network-tag">Legal architects</span>
+          <span class="network-tag">Governance specialists</span>
+          <span class="network-tag">Organisational psychologists</span>
+          <span class="network-tag">Financial strategists</span>
+          <span class="network-tag">Policy experts</span>
+          <span class="network-tag">Cross-cultural negotiators</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <span class="eyebrow reveal">Contact</span>
+  <h2 class="contact-title reveal">Let's start a<br><em>conversation.</em></h2>
+
+  <div class="contact-info reveal">
+    <div class="contact-info-item">
+      <span class="contact-info-label">Email</span>
+      <a href="mailto:inquiries@systems-advisory.com" class="contact-info-value">inquiries@systems-advisory.com</a>
+    </div>
+    <div class="contact-info-item">
+      <span class="contact-info-label">Phone</span>
+      <a href="tel:+447713690980" class="contact-info-value">+44 7713 690 980</a>
+    </div>
+    <div class="contact-info-item">
+      <span class="contact-info-label">Collaborate</span>
+      <a href="mailto:collaborate@systems-advisory.com" class="contact-info-value">collaborate@systems-advisory.com</a>
+    </div>
+  </div>
+
+  <div class="form-divider reveal"></div>
+
+  <div data-fs-success style="display:none" class="form-success">
+    <p>Your enquiry has been received. We will be in touch shortly.</p>
+  </div>
+  <div data-fs-error style="display:none" class="form-error">
+    <p>Something went wrong. Please try again or email us directly.</p>
+  </div>
+
+  <form id="contact-form" class="contact-form reveal">
+    <div class="form-row">
+      <div class="form-group">
+        <label for="cf-name">Name</label>
+        <input type="text" id="cf-name" name="name" placeholder="Your name" data-fs-field required>
+        <span data-fs-error="name" class="field-error"></span>
+      </div>
+      <div class="form-group">
+        <label for="cf-org">Organisation</label>
+        <input type="text" id="cf-org" name="organisation" placeholder="Company or institution">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="cf-email">Email</label>
+      <input type="email" id="cf-email" name="email" placeholder="your@email.com" data-fs-field required>
+      <span data-fs-error="email" class="field-error"></span>
+    </div>
+    <div class="form-group">
+      <label for="cf-type">Nature of enquiry</label>
+      <select id="cf-type" name="type">
+        <option value="" disabled selected>Select</option>
+        <option value="engagement">New engagement</option>
+        <option value="strategic">Strategic enquiry</option>
+        <option value="collaborate">Expert network / collaboration</option>
+        <option value="other">Other</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="cf-message">Message</label>
+      <textarea id="cf-message" name="message" placeholder="Briefly describe your context or question" data-fs-field required></textarea>
+      <span data-fs-error="message" class="field-error"></span>
+    </div>
+    <button type="submit" class="form-submit" data-fs-submit-btn>Send message</button>
+  </form>
+
+  <span class="contact-note reveal">Private · Confidential · Independent</span>
+</section>
+
+<footer>
+  <span class="footer-l">SYSTEMS · Independent Strategic Advisory</span>
+  <span class="footer-c">London · Valencia</span>
+  <span class="footer-r">systems-advisory.com</span>
+</footer>
+
+<script>
+  // Scroll reveal
+  const els = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('visible'), i * 65);
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.08 });
+  els.forEach(el => io.observe(el));
+
+  // Formspree
+  window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+  formspree('initForm', { formElement: '#contact-form', formId: 'mrerlwza' });
+
+  // Hamburger menu
+  const burger = document.getElementById('burger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  burger.addEventListener('click', () => {
+    burger.classList.toggle('open');
+    mobileMenu.classList.toggle('open');
+  });
+  document.querySelectorAll('.mobile-link').forEach(link => {
+    link.addEventListener('click', () => {
+      burger.classList.remove('open');
+      mobileMenu.classList.remove('open');
+    });
+  });
+</script>
+<script src="https://unpkg.com/@formspree/ajax@1" defer></script>
+</body>
+</html>
